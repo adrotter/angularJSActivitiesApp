@@ -1,0 +1,1 @@
+This is a project I wrote as practice for AngularJS.
