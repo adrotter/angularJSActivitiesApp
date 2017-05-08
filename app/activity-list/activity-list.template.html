@@ -15,6 +15,12 @@
           <option value="id">ID</option>
         </select>
       </p>
+      <p>
+      <form ng-submit="$ctrl.submit()">
+        Enter a user's repos using the appropriate github API link and hit enter
+        <input type="text" ng-model="$ctrl.text" name="text" />
+        <input type="submit" id="submit" value="Submit" />
+      </form>
 
     </div>
     <div class="col-md-10">
@@ -23,7 +29,7 @@
       <ul class="listItems">
         <li ng-repeat="item in $ctrl.listItems | filter:$ctrl.query | orderBy:$ctrl.orderProp">
           <span>{{item.name}}</span>
-          <p>{{item.snippet}}</p>
+          <p>{{item.full_name}}</p>
         </li>
       </ul>
 

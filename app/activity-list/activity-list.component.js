@@ -8,9 +8,24 @@ angular.
     controller: function ListController($http) {
       var self = this;
       self.orderProp = 'id';
-
-      $http.get('https://api.github.com/users/adrotter/repos').then(function(response) {
-        self.listItems = response.data;
-      });
+      self.listItems = [];
+      self.text = 'https://api.github.com/users/adrotter/repos'
+      self.submit = function(){
+        if (self.text){
+          $http.get(self.text).then(function(response) {
+            var data = response.data;
+            angular.forEach(data, function(item){
+              self.listItems.push(item);  
+            })
+          });
+          self.text = '';
+        }
+      }
+      // $http.get('https://api.github.com/users/adrotter/repos').then(function(response) {
+      //   var data = response.data;
+      //   angular.forEach(data, function(item){
+      //     self.listItems.push(item);  
+      //   })
+      // });
     }
   });
