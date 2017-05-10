@@ -8,28 +8,29 @@
         <input ng-model="$ctrl.query" />
       </p>
 
-      <p>
+      <!-- <p>
         Sort by:
         <select ng-model="$ctrl.orderProp">
           <option value="name">Alphabetical</option>
-          <option value="id">ID</option>
+          <option value="-pushed_at">Last Updated</option>
         </select>
-      </p>
+      </p> -->
       <p>
       <form ng-submit="$ctrl.submit()">
-        Enter a user's repos using the appropriate github API link and hit enter
+        Enter a user's github username to subscribe to their repo feed.
         <input type="text" ng-model="$ctrl.text" name="text" />
         <input type="submit" id="submit" value="Submit" />
       </form>
-
+      </p>
     </div>
     <div class="col-md-10">
       <!--Body content-->
 
       <ul class="listItems">
         <li ng-repeat="item in $ctrl.listItems | filter:$ctrl.query | orderBy:$ctrl.orderProp">
-          <span>{{item.name}}</span>
-          <p>{{item.full_name}}</p>
+          <span><img ng-src="{{item.owner.avatar_url}}" ng-style=" {'width':'30px','height':'30px'}" /> {{item.owner.login}}</span>
+          <p>{{$ctrl.decideIfCreatedOrUpdate(item)}}{{item.name}}</p>
+          <p></p>
         </li>
       </ul>
 
