@@ -27,10 +27,12 @@
       <!--Body content-->
 
       <ul class="listItems">
-        <li ng-repeat="item in $ctrl.listItems | filter:$ctrl.query | orderBy:$ctrl.orderProp">
-          <span><img ng-src="{{item.owner.avatar_url}}" ng-style=" {'width':'30px','height':'30px'}" /> {{item.owner.login}}</span>
-          <p>{{$ctrl.decideIfCreatedOrUpdate(item)}}{{item.name}}</p>
-          <p></p>
+        <li ng-repeat="item in $ctrl.listItems  | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+          <span><img ng-src="{{item.activity.object.contentImage.dimensions.normal.url}}" ng-style=" {'width':'{{item.activity.object.contentImage.dimensions.normal.width}}px','height':'{{item.activity.object.contentImage.dimensions.normal.height}}px'}" /> {{item.activity.actor.author.displayName}}</span>
+          <p>{{item.activity.object.content}} {{item.activity.title}}</p>
+          <section>
+            <clock format="12"></clock>
+          </section>
         </li>
       </ul>
 
