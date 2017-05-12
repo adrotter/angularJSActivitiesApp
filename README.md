@@ -13,17 +13,7 @@ two new folders in your project.
 *Note that the `bower_components` folder would normally be installed in the root folder but
 `angular-seed` changes this location through the `.bowerrc` file. Putting it in the `app` folder
 makes it easier to serve the files by a web server.*
-
-### Run the Application
-
-We have preconfigured the project with a simple development web server. The simplest way to start
-this server is:
-
-```
-npm start
-```
-
-Now browse to the app at [`localhost:8000/`]
+--Doesn't seem to do this anymore.
 
 
 ## Updating Angular
@@ -40,4 +30,21 @@ This will call `npm update` and `bower update`, which in turn will find and inst
 versions that match the version ranges specified in the `package.json` and `bower.json` files
 respectively.
 
+## Install Angular Materials
+```
+bower install angular-materials
+```
 
+## Move bower_components to app folder
+
+
+### Run the Application
+
+We have preconfigured the project with a simple development web server. The simplest way to start
+this server is:
+
+```
+npm start
+```
+
+Now browse to the app at [`localhost:8000/`]
