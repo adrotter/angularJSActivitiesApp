@@ -1,0 +1,18 @@
+{
+  "name": "activitiesapp",
+  "description": "A starter project for AngularJS",
+  "version": "0.0.0",
+  "homepage": "https://github.com/adrotter/angularJSActivitiesApp",
+  "license": "",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.6.0",
+    "angular-route": "~1.6.0",
+    "angular-loader": "~1.6.0",
+    "angular-mocks": "~1.6.0",
+    "angular-animate": "~1.6.0",
+    "bootstrap": "3.3.x",
+    "moment": "^2.18.1",
+    "angular-moment": "^1.0.1"
+  }
+}
