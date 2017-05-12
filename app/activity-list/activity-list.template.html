@@ -1,20 +1,11 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-2">
+<md-content>
+      
       <!--Sidebar content-->
 
       <p>
         Search:
         <input ng-model="$ctrl.query" />
       </p>
-
-      <!-- <p>
-        Sort by:
-        <select ng-model="$ctrl.orderProp">
-          <option value="name">Alphabetical</option>
-          <option value="-pushed_at">Last Updated</option>
-        </select>
-      </p> -->
       <p>
       <form ng-submit="$ctrl.submit()">
         Enter a user's github username to subscribe to their repo feed.
@@ -22,20 +13,19 @@
         <input type="submit" id="submit" value="Submit" />
       </form>
       </p>
-    </div>
     <div class="col-md-10">
       <!--Body content-->
 
-      <ul class="listItems">
-        <li ng-repeat="item in $ctrl.listItems  | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+      <md-list>
+        <md-list-item class="md-3-line" ng-repeat="item in $ctrl.listItems  | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+          <div class="mid-list-item-text">
           <span><img ng-src="{{item.activity.object.contentImage.dimensions.normal.url}}" ng-style=" {'width':'{{item.activity.object.contentImage.dimensions.normal.width}}px','height':'{{item.activity.object.contentImage.dimensions.normal.height}}px'}" /> {{item.activity.actor.author.displayName}}</span>
           <p>{{item.activity.object.content}} {{item.activity.title}}</p>
-          <section>
-            <clock date={{item.activity.object.ucdEdusModel.event.endDate}}></clock>
-          </section>
-        </li>
-      </ul>
-
+          <clock date={{item.activity.object.ucdEdusModel.event.endDate}}></clock>
+          </div>
+          <hr></hr>
+        </md-list-item></md-list>
+      </md-list>
     </div>
-  </div>
-</div>
+</md-content>
+
