@@ -31,7 +31,7 @@
           <span><img ng-src="{{item.activity.object.contentImage.dimensions.normal.url}}" ng-style=" {'width':'{{item.activity.object.contentImage.dimensions.normal.width}}px','height':'{{item.activity.object.contentImage.dimensions.normal.height}}px'}" /> {{item.activity.actor.author.displayName}}</span>
           <p>{{item.activity.object.content}} {{item.activity.title}}</p>
           <section>
-            <clock format="12"></clock>
+            <clock date={{item.activity.object.ucdEdusModel.event.endDate}}></clock>
           </section>
         </li>
       </ul>
